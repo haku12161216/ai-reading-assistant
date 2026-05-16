@@ -52,10 +52,9 @@ if st.button("开始分析"):
 
             # Prompt
             # 根据 mode 选择不同分析师
+            if mode == "AI 创业":
 
-if mode == "AI 创业":
-
-    system_prompt = """
+                system_prompt = """
 你是一位顶级 AI 创业分析师。
 
 请重点分析：
@@ -67,9 +66,9 @@ if mode == "AI 创业":
 - Agent 方向
 """
 
-elif mode == "金融投资":
+            elif mode == "金融投资":
 
-    system_prompt = """
+                system_prompt = """
 你是一位顶级金融投资分析师。
 
 请重点分析：
@@ -81,9 +80,9 @@ elif mode == "金融投资":
 - 长期趋势
 """
 
-elif mode == "科技新闻":
+            elif mode == "科技新闻":
 
-    system_prompt = """
+                system_prompt = """
 你是一位科技趋势分析师。
 
 请重点分析：
@@ -95,9 +94,9 @@ elif mode == "科技新闻":
 - 创新点
 """
 
-elif mode == "学术研究":
+            elif mode == "学术研究":
 
-    system_prompt = """
+                system_prompt = """
 你是一位科研助手。
 
 请重点分析：
@@ -109,9 +108,9 @@ elif mode == "学术研究":
 - 未来研究方向
 """
 
-elif mode == "美容行业":
+            elif mode == "美容行业":
 
-    system_prompt = """
+                system_prompt = """
 你是一位顶级美容行业分析师。
 
 请重点分析：
@@ -124,15 +123,15 @@ elif mode == "美容行业":
 - AI 对美容行业的影响
 """
 
-else:
+            else:
 
-    system_prompt = """
+                system_prompt = """
 你是一位专业阅读助手。
 """
 
-# 最终 Prompt
+            # 最终 Prompt
 
-prompt = f"""
+            prompt = f"""
 {system_prompt}
 
 请阅读下面文章。
@@ -170,6 +169,5 @@ prompt = f"""
 
             # 输出结果
             st.markdown(result)
-
         except Exception as e:
             st.error(f"发生错误：{e}")
